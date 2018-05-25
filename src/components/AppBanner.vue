@@ -1,7 +1,7 @@
 <template>
   <banner-container>
     <template slot="main">
-      <div style="display: inline-block;position: absolute;right: 15px">
+      <div style="display: inline-block;position: absolute;right: 0">
         <!--<div style="width: 100px;display: inline-block"></div>-->
       <div class="top-btn" @click="onClick()">
           <img class="top-btn-img" src="../../static/img/png64/dog_house-64.png" alt="">
@@ -35,45 +35,6 @@
       </div>
 
       </div>
-     <!-- <el-menu class="el-menu-demo"
-               :default-active="activeIndex"
-               ref="menu"
-               :unique-opened="true"
-               menu-trigger="click"
-               @select="handleSelect"
-               mode="horizontal"
-               background-color="#006f6a"
-               text-color="#FFFFFF"
-               active-text-color="#ffd04b"
-      >
-        <el-submenu index="1">
-          <template slot="title">工程场景</template>
-          <el-menu-item index="sceneManage">场景管理</el-menu-item>
-          <el-menu-item index="paramManage">参数配置</el-menu-item>
-          <el-menu-item index="symbolTool">对象标注</el-menu-item>
-          <el-menu-item index="metaManage">元数据管理</el-menu-item>
-        </el-submenu>
-
-        <el-submenu index="6">
-          <template slot="title">视图操作</template>
-          <el-menu-item index="zoomout">放大</el-menu-item>
-          <el-menu-item index="zoomin">缩小</el-menu-item>
-          <el-menu-item index="pan">平移</el-menu-item>
-          <el-menu-item index="mapMeasure">地图量测</el-menu-item>
-        </el-submenu>
-        <el-submenu index="2">
-          <template slot="title">查询分析</template>
-          <el-menu-item index="searchPos">查询定位</el-menu-item>
-          <el-menu-item index="analysisOppr">空间分析</el-menu-item>
-
-        </el-submenu>
-        <el-submenu index="4">
-          <template slot="title">业务操作</template>
-          <el-menu-item index="eleLine">线路走廊</el-menu-item>
-          <el-menu-item index="underLine">地下管线</el-menu-item>
-        </el-submenu>
-        <el-menu-item index="helper">开发帮助</el-menu-item>
-      </el-menu>-->
     </template>
   </banner-container>
 </template>

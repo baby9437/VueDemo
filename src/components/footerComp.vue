@@ -1,6 +1,6 @@
 <template>
   <footer>
-    福州市勘测院数字城市研究中心
+    <!--福州市勘测院数字城市研究中心-->
   </footer>
 </template>
 

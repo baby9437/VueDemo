@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
     <!--<img src="" alt=""  class="logo" @click="handleRoot"><span>{{appTitle}}</span>-->
-    <span style="margin-left: 10px">{{appTitle}}</span>
+    <span style="margin-left: 0px">{{appTitle}}</span>
         <slot name="main">
 
         </slot>

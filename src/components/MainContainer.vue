@@ -1,13 +1,18 @@
 <template>
   <div>
-    <app-banner class="app-banner" ></app-banner>
-    <right-side-bar></right-side-bar>
-    <div class="components-container">
-      <map-container ></map-container>
-      <helper-container ></helper-container>
-    </div>
+    <el-container>
+      <el-header style="padding: 0;height: 50px;">
+        <app-banner class="app-banner" ></app-banner>
+      </el-header>
+      <el-aside>
+        <right-side-bar></right-side-bar>
+      </el-aside>
 
-    <footer-comp ></footer-comp>
+      <el-main style="padding: 0;">
+        <map-container ></map-container>
+      </el-main>
+      <panel-container></panel-container>
+    </el-container>
   </div>
 </template>
 
@@ -17,12 +22,14 @@
    import footerComp from './footerComp'
    import MapContainer from './MapContainer'
    import HelperContainer from './HelperContainer'
-
+   import PanelContainer from './PanelContainer'
   export default {
     name: 'MainContainer',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        h: window.screen.height,
+        w: window.screen.width
       }
     },
     components: {
@@ -30,7 +37,8 @@
       HelperContainer,
       AppBanner: AppBanner,
       RightSideBar: RightSideBar,
-      MapContainer: MapContainer
+      MapContainer: MapContainer,
+      PanelContainer:PanelContainer
     }
   }
 </script>
@@ -52,7 +60,6 @@
     float: left;
     width: 100%;
   }
-
   .test-parent{
     color: red;
   }
