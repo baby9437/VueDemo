@@ -1,9 +1,8 @@
 <template>
   <footer>
-    CopyRight © 2018 亿力吉奥-GS(2018)634号
+    福州市勘测院数字城市研究中心
   </footer>
 </template>
-
 
 <script>
     export default{

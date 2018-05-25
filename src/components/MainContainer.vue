@@ -1,18 +1,19 @@
 <template>
   <div>
     <app-banner class="app-banner" ></app-banner>
+    <right-side-bar></right-side-bar>
     <div class="components-container">
-      <map-container :menu-active="menuActiveObj" v-show="pageType=='map'"></map-container>
-      <helper-container v-show="pageType=='helper'"></helper-container>
+      <map-container ></map-container>
+      <helper-container ></helper-container>
     </div>
 
-    <footer-comp v-show="pageType=='map'"></footer-comp>
+    <footer-comp ></footer-comp>
   </div>
 </template>
 
 <script>
-  import test from './test'
-  import AppBanner from './AppBanner'
+   import AppBanner from './AppBanner'
+   import RightSideBar from './RightSideBar'
    import footerComp from './footerComp'
    import MapContainer from './MapContainer'
    import HelperContainer from './HelperContainer'
@@ -28,8 +29,8 @@
       footerComp,
       HelperContainer,
       AppBanner: AppBanner,
-      MapContainer: MapContainer,
-      test: test
+      RightSideBar: RightSideBar,
+      MapContainer: MapContainer
     }
   }
 </script>

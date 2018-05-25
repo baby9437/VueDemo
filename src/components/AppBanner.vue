@@ -1,7 +1,41 @@
 <template>
   <banner-container>
     <template slot="main">
-      <el-menu class="el-menu-demo"
+      <div style="display: inline-block;position: absolute;right: 15px">
+        <!--<div style="width: 100px;display: inline-block"></div>-->
+      <div class="top-btn" @click="onClick()">
+          <img class="top-btn-img" src="../../static/img/png64/dog_house-64.png" alt="">
+        </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/220fullscreen.png" alt="">
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/pan1.png" alt="">
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/311info.png" alt="">
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/340movie.png" alt="">
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/240walk.png" alt="">
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/251sun.png" alt="">
+      </div>
+      <div style="width: 50px;display: inline-block"></div>
+
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/100user1.png" alt="">
+        <div style="display: inline-block;">Admin</div>
+      </div>
+      <div class="top-btn" @click="onClick()">
+        <img class="top-btn-img" src="../../static/img/png64/menu.svg" alt="">
+      </div>
+
+      </div>
+     <!-- <el-menu class="el-menu-demo"
                :default-active="activeIndex"
                ref="menu"
                :unique-opened="true"
@@ -39,7 +73,7 @@
           <el-menu-item index="underLine">地下管线</el-menu-item>
         </el-submenu>
         <el-menu-item index="helper">开发帮助</el-menu-item>
-      </el-menu>
+      </el-menu>-->
     </template>
   </banner-container>
 </template>
@@ -74,6 +108,9 @@
          }else{
          this.$emit("openMenu",key)
          }*/
+      },
+      onClick(){
+        console.log('--------')
       }
     },
     watch: {
@@ -104,5 +141,11 @@
     font-weight: 500;
     font-family: 'Microsoft YaHei';
     font-size: 15px;
+  }
+  .top-btn{
+    display: inline-block
+  }
+  .top-btn .top-btn-img{
+    width: 38px;height: 38px;cursor: pointer;
   }
 </style>

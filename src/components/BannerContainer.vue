@@ -1,12 +1,11 @@
 <template>
   <div class="top-nav">
-    <img src="static/img/Logo.png" alt=""  class="logo" @click="handleRoot"><span>{{appTitle}}</span>
+    <!--<img src="" alt=""  class="logo" @click="handleRoot"><span>{{appTitle}}</span>-->
+    <span style="margin-left: 10px">{{appTitle}}</span>
         <slot name="main">
 
         </slot>
-    <el-tooltip  effect="dark" content="点击全屏/取消全屏" placement="bottom">
-      <!--<Screenfull class="full-screen"  style="position: absolute;right: 15px;top: 2px;"></Screenfull>-->
-    </el-tooltip>
+    <el-tooltip  effect="dark" content="点击全屏/取消全屏" placement="bottom"></el-tooltip>
   </div>
 </template>
 
@@ -19,7 +18,7 @@
 //    components: {Screenfull},
     data(){
       return {
-          appTitle:'基于云架构的二三维一体化应用'
+          appTitle:'福州市三维规划辅助决策支持系统'
       }
     },
     methods: {
@@ -54,11 +53,11 @@
   }
   .top-nav{
     position: relative;
-    height: 61px;
-    line-height: 61px;
+    height: 50px;
+    line-height: 50px;
     border-bottom: 1px solid #ebeef5;
     font-size: 22px;
-    background-color: #006f6a;
+    background-color: #00bcd4;
     color: #ffff;
     padding-left: 10px;
     box-shadow: 2px 0 8px rgba(0,0,0,0.3);
