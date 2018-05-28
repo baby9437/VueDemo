@@ -8,7 +8,7 @@
     </div>
     <!--内容-->
     <div id="content">
-     content
+     {{menuId}}
     </div>
   </div>
 </template>
@@ -23,10 +23,14 @@
         panelVisible:true
       }
     },
-    props:['menuId'],
+    props:['menuId','visible'],
     watch:{
-      visible(val){
-        this.panelVisible = val
+      menuId(val){
+        if(!val){
+          this.panelVisible=false
+        }else {
+          this.panelVisible = true
+        }
       }
     },
     computed(){
@@ -41,16 +45,18 @@
 </script>
 <style scoped>
   .panel{
-    position: absolute;width: 300px;background-color: white;right: -300px;top: 51px;border: 1px solid lightgray;
+    position: absolute;width: 300px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
   }
   .panelShow{
-    color: red;
+    display: block;
+   /* color: red;
     transform: translateX(-370px);
-    transition: transform 1s linear 0s;
+    transition: transform 1s linear 0s;*/
   }
   .panelHidden{
-    transform: translateX(370px);
-    transition: transform 1s linear 0s;
+    display: none;
+   /* transform: translateX(370px);
+    transition: transform 1s linear 0s;*/
   }
 #header{
   height: 40px;

@@ -1,38 +1,31 @@
 <template>
   <div>
     <el-container>
-      <!--<el-header style="padding: 0;height: 50px;">-->
-        <!--顶部bannaer条-->
-        <app-banner class="app-banner" @handleSidebar="handleSidebar"></app-banner>
-      <!--</el-header>-->
-      <!--<el-aside>-->
-        <!--右部侧边栏-->
-        <right-sidebar v-show='sidebarVisible' @menuClick="handleMenuClick"></right-sidebar>
-      <!--</el-aside>-->
-
-      <!--<el-main style="padding: 0;">-->
-        <!--主视图区域-->
-        <map-container ></map-container>
-      <!--</el-main>-->
+      <!--顶部bannaer条-->
+      <app-banner class="app-banner" @handleSidebar="handleSidebar"></app-banner>
+      <!--右部侧边栏-->
+      <right-sidebar v-show='sidebarVisible' @menuClick="handleMenuClick"></right-sidebar>
+      <!--主视图区域-->
+      <map-container></map-container>
       <!--功能面板-->
-      <panel-container :menuId="menuId"></panel-container>
-
+      <panel-container :menuId="menuId" :visible="panelVisible"></panel-container>
     </el-container>
   </div>
 </template>
 
 <script>
-   import AppBanner from './AppBanner'
-   import RightSidebar from './RightSidebar'
-   import MapContainer from './MapContainer'
-   import PanelContainer from './PanelContainer'
+  import AppBanner from './AppBanner'
+  import RightSidebar from './RightSidebar'
+  import MapContainer from './MapContainer'
+  import PanelContainer from './PanelContainer'
 
   export default {
     name: 'MainContainer',
-    data () {
+    data() {
       return {
-        sidebarVisible:true,
-        menuId:''
+        sidebarVisible: true,
+        menuId: '',
+        panelVisible: true
       }
     },
     components: {
@@ -41,17 +34,17 @@
       MapContainer: MapContainer,
       PanelContainer: PanelContainer
     },
-    methods:{
-      handleSidebar(){
+    methods: {
+      handleSidebar() {
         this.sidebarVisible = !this.sidebarVisible;
-        if(this.sidebarVisible===false && this.panelVisible===true ){
+        if (this.sidebarVisible === false && this.panelVisible === true) {
           this.panelVisible = false
-          console.log( this.panelVisible)
+          console.log(this.panelVisible)
         }
       },
-      handleMenuClick(menu){
-        console.log(menu)
+      handleMenuClick(menu) {
         this.menuId = menu
+        this.panelVisible = true
       }
     }
   }
@@ -68,13 +61,15 @@
     max-height: calc(100vh - 60px);
     overflow: hidden;
   }
-  .app-banner{
+
+  .app-banner {
     text-align: left;
     display: inline;
     float: left;
     width: 100%;
   }
-  .test-parent{
+
+  .test-parent {
     color: red;
   }
 
