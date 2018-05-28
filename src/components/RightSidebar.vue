@@ -2,23 +2,16 @@
   <div id="sideBar">
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
              @close="handleClose" background-color="#00bcd4" @select="handleSelect"
-      text-color="#fff" active-text-color="#ffd04b">
-      <el-submenu index="1" style="padding:0;" >
-        <span slot="title"><img class="subMenuImg" src="../../static/img/png64/tools64.png" alt=""></span>
-        <el-menu-item style="margin:0;padding: 0;" index="1-1">
-          <img style="width: 55px ;background-color: gray" src="../../static/img/png64/tools64.png" alt="">
+              text-color="#fff" active-text-color="#ffd04b">
+      <el-submenu v-for="submenu in menu" :index="submenu.id" style="padding: 0">
+        <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
+        <el-menu-item v-for="child in submenu.children" style="margin:0;padding: 0;" :index="child.id">
+          <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt="">
+          <div>{{child.name}}</div>
         </el-menu-item>
-
       </el-submenu>
-      <el-submenu index="2" style="padding:0;" >
-        <span slot="title"><img class="subMenuImg" src="../../static/img/png64/tools64.png" alt=""></span>
-        <el-menu-item style="margin:0;padding: 0;" index="2-1">
-          <img style="width: 55px ;background-color: gray" src="../../static/img/png64/tools64.png" alt="">
-        </el-menu-item>
-
-      </el-submenu>
-
     </el-menu>
+
   </div>
 </template>
 
@@ -28,8 +21,6 @@
     name: 'RightSideBar',
     data(){
       return {
-        h:screen.height,
-        w:screen.width,
         menu:[
           {//第一组一级菜单
               id: 100,///用户管理
@@ -173,10 +164,11 @@
         console.log(key, keyPath);
       },
       handleSelect(key, keyPath) {
-
-          this.currentSelect = key;
-          this.$emit('menuClick',this.currentSelect)
-
+        this.currentSelect = key;
+        this.$emit('menuClick',this.currentSelect)
+      },
+      getImageUrl(name){
+        return '../../static/img/png64/'+name
       }
     }
   }
@@ -185,24 +177,38 @@
 #sideBar{
   background-color: #00bcd4;
   z-index: 1000;
-  width: 60px;
-  height: calc(100%-30px);
+  width: 77px;
+  height: calc(100% - 50px);
   position: absolute;
-  right: -15px;
+  right: -18px;
   top: 50px;
+  overflow: scroll
+}
+.el-menu{
+  /*padding-left: 10px;*/
+}
+.el-menu-item{
+  background-color: white !important;
+  border-left:rgb(0, 188, 212) solid thin;
+  border-right:rgb(0, 188, 212) solid thin;
 }
 .el-submenu .el-menu-item{
   min-width: 0;
-  margin-left: -40px;
+  /*margin-left: -40px;*/
 }
 .el-submenu__title{
   padding-left:0 !important;
   padding-right:0 !important;
 }
-
   .subMenuImg{
-    margin-left: -20px;
-    width: 55px;
+    margin-left: -10px;
+    width: 38px;
   }
-
+  .subMenuItemImg{
+    width: 38px ;background-color: white;
+    margin-left: 10px;
+  }
+i {
+ padding-left: 40px !important;
+}
 </style>

@@ -1,21 +1,22 @@
 <template>
   <div>
     <el-container>
-      <el-header style="padding: 0;height: 50px;">
+      <!--<el-header style="padding: 0;height: 50px;">-->
         <!--顶部bannaer条-->
         <app-banner class="app-banner" @handleSidebar="handleSidebar"></app-banner>
-      </el-header>
-      <el-aside>
+      <!--</el-header>-->
+      <!--<el-aside>-->
         <!--右部侧边栏-->
         <right-sidebar v-show='sidebarVisible' @menuClick="handleMenuClick"></right-sidebar>
-      </el-aside>
+      <!--</el-aside>-->
 
-      <el-main style="padding: 0;">
+      <!--<el-main style="padding: 0;">-->
         <!--主视图区域-->
         <map-container ></map-container>
-      </el-main>
+      <!--</el-main>-->
       <!--功能面板-->
-      <panel-container v-show="panelVisible"></panel-container>
+      <panel-container :visible="panelVisible"></panel-container>
+
     </el-container>
   </div>
 </template>
@@ -23,10 +24,9 @@
 <script>
    import AppBanner from './AppBanner'
    import RightSidebar from './RightSidebar'
-
    import MapContainer from './MapContainer'
-
    import PanelContainer from './PanelContainer'
+
   export default {
     name: 'MainContainer',
     data () {
@@ -51,7 +51,7 @@
       },
       handleMenuClick(menu){
         console.log(menu)
-       this.panelVisible = true
+        this.panelVisible = true
       }
     }
   }
