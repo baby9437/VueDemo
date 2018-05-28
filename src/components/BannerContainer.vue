@@ -1,11 +1,9 @@
 <template>
   <div class="top-nav">
-    <!--<img src="" alt=""  class="logo" @click="handleRoot"><span>{{appTitle}}</span>-->
     <span style="margin-left: 0px">{{appTitle}}</span>
         <slot name="main">
 
         </slot>
-    <el-tooltip  effect="dark" content="点击全屏/取消全屏" placement="bottom"></el-tooltip>
   </div>
 </template>
 

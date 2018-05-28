@@ -1,6 +1,7 @@
 <template>
   <div id="sideBar">
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" background-color="#00bcd4"
+    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
+             @close="handleClose" background-color="#00bcd4" @select="handleSelect"
       text-color="#fff" active-text-color="#ffd04b">
       <el-submenu index="1" style="padding:0;" >
         <span slot="title"><img class="subMenuImg" src="../../static/img/png64/tools64.png" alt=""></span>
@@ -158,16 +159,24 @@
                   {id: 720, name: '用户管理', icon: '720usermanage.png', hasChildren: false, hasPanel: true, panelId: 'panel-usermanage'},
                   {id: 730, name: '数据配置', icon: '730datamanage.png', hasChildren: false, hasPanel: true, panelId: 'panel-datamanage'},
                 ]
-            }]
-
+            }],
+        currentSelect:null
       }
     },
     methods: {
       handleOpen(key, keyPath) {
+        console.log('open');
         console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
+        console.log('close');
         console.log(key, keyPath);
+      },
+      handleSelect(key, keyPath) {
+
+          this.currentSelect = key;
+          this.$emit('menuClick',this.currentSelect)
+
       }
     }
   }
@@ -177,7 +186,7 @@
   background-color: #00bcd4;
   z-index: 1000;
   width: 60px;
-  height: 100%;
+  height: calc(100%-30px);
   position: absolute;
   right: -15px;
   top: 50px;

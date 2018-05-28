@@ -4,7 +4,7 @@
       <div style="display: inline-block;position: absolute;right: 0">
         <!--<div style="width: 100px;display: inline-block"></div>-->
       <div class="top-btn" @click="onClick()">
-          <img class="top-btn-img" src="../../static/img/png64/dog_house-64.png" alt="">
+          <img class="top-btn-img" src="/static/img/png64/dog_house-64.png" alt="">
         </div>
       <div class="top-btn" @click="onClick()">
         <img class="top-btn-img" src="../../static/img/png64/220fullscreen.png" alt="">
@@ -30,7 +30,7 @@
         <img class="top-btn-img" src="../../static/img/png64/100user1.png" alt="">
         <div style="display: inline-block;">Admin</div>
       </div>
-      <div class="top-btn" @click="onClick()">
+      <div class="top-btn" @click="onMenuClick()">
         <img class="top-btn-img" src="../../static/img/png64/menu.svg" alt="">
       </div>
 
@@ -72,6 +72,9 @@
       },
       onClick(){
         console.log('--------')
+      },
+      onMenuClick(){
+        this.$emit('handleSidebar')
       }
     },
     watch: {
@@ -108,5 +111,8 @@
   }
   .top-btn .top-btn-img{
     width: 38px;height: 38px;cursor: pointer;
+  }
+  .menuRotate{
+
   }
 </style>

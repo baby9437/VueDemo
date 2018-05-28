@@ -2,7 +2,7 @@
   <div style="position: absolute;width: 300px;height: 100%;background-color: white;right: 46px;top: 51px;border: 1px solid lightgray;">
     <div id="header">
       <div style="text-align: center;display: block;font-size: 25px;color: white;">{{title}}</div>
-      <div style="position: absolute;right: 0px;top: 0px;">
+      <div style="position: absolute;right: 0px;top: 0px;" @click="handleClose">
         <img style="width: 40px;" src="../../static/img/png64/101Close64.png" alt="">
       </div>
 
@@ -19,11 +19,13 @@
     name: 'test',
     data(){
       return {
-        title: 'title'
+        title: 'custom title'
       }
     },
     methods: {
+      handleClose(){
 
+      }
     }
   }
 </script>

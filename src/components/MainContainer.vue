@@ -2,43 +2,57 @@
   <div>
     <el-container>
       <el-header style="padding: 0;height: 50px;">
-        <app-banner class="app-banner" ></app-banner>
+        <!--顶部bannaer条-->
+        <app-banner class="app-banner" @handleSidebar="handleSidebar"></app-banner>
       </el-header>
       <el-aside>
-        <right-side-bar></right-side-bar>
+        <!--右部侧边栏-->
+        <right-sidebar v-show='sidebarVisible' @menuClick="handleMenuClick"></right-sidebar>
       </el-aside>
 
       <el-main style="padding: 0;">
+        <!--主视图区域-->
         <map-container ></map-container>
       </el-main>
-      <panel-container></panel-container>
+      <!--功能面板-->
+      <panel-container v-show="panelVisible"></panel-container>
     </el-container>
   </div>
 </template>
 
 <script>
    import AppBanner from './AppBanner'
-   import RightSideBar from './RightSideBar'
-   import footerComp from './footerComp'
+   import RightSidebar from './RightSidebar'
+
    import MapContainer from './MapContainer'
-   import HelperContainer from './HelperContainer'
+
    import PanelContainer from './PanelContainer'
   export default {
     name: 'MainContainer',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
-        h: window.screen.height,
-        w: window.screen.width
+        sidebarVisible:true,
+        panelVisible:false
       }
     },
     components: {
-      footerComp,
-      HelperContainer,
       AppBanner: AppBanner,
-      RightSideBar: RightSideBar,
+      RightSidebar: RightSidebar,
       MapContainer: MapContainer,
-      PanelContainer:PanelContainer
+      PanelContainer: PanelContainer
+    },
+    methods:{
+      handleSidebar(){
+        this.sidebarVisible = !this.sidebarVisible;
+        if(this.sidebarVisible===false && this.panelVisible===true ){
+          this.panelVisible = false
+          console.log( this.panelVisible)
+        }
+      },
+      handleMenuClick(menu){
+        console.log(menu)
+       this.panelVisible = true
+      }
     }
   }
 </script>
@@ -63,4 +77,5 @@
   .test-parent{
     color: red;
   }
+
 </style>
