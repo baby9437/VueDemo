@@ -5,8 +5,8 @@
       <div style="position: absolute;right: 0px;top: 0px;" @click="handleClose">
         <img style="width: 40px;" src="../../static/img/png64/101Close64.png" alt="">
       </div>
-
     </div>
+    <!--内容-->
     <div id="content">
      content
     </div>
@@ -23,7 +23,7 @@
         panelVisible:true
       }
     },
-    props:['visible'],
+    props:['menuId'],
     watch:{
       visible(val){
         this.panelVisible = val
@@ -34,21 +34,23 @@
     },
     methods: {
       handleClose(){
-        this.panelVisible=!this.panelVisible
+        this.panelVisible=false
       }
     }
   }
 </script>
 <style scoped>
   .panel{
-    position: absolute;width: 300px;background-color: white;right: 46px;top: 51px;border: 1px solid lightgray;
+    position: absolute;width: 300px;background-color: white;right: -300px;top: 51px;border: 1px solid lightgray;
   }
   .panelShow{
     color: red;
-    transform: translateX(-50px);
+    transform: translateX(-370px);
+    transition: transform 1s linear 0s;
   }
   .panelHidden{
-    transform: translateX(50px);
+    transform: translateX(370px);
+    transition: transform 1s linear 0s;
   }
 #header{
   height: 40px;

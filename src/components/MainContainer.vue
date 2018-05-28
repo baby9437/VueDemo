@@ -15,7 +15,7 @@
         <map-container ></map-container>
       <!--</el-main>-->
       <!--功能面板-->
-      <panel-container :visible="panelVisible"></panel-container>
+      <panel-container :menuId="menuId"></panel-container>
 
     </el-container>
   </div>
@@ -32,7 +32,7 @@
     data () {
       return {
         sidebarVisible:true,
-        panelVisible:false
+        menuId:''
       }
     },
     components: {
@@ -51,7 +51,7 @@
       },
       handleMenuClick(menu){
         console.log(menu)
-        this.panelVisible = true
+        this.menuId = menu
       }
     }
   }
