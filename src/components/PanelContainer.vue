@@ -8,12 +8,14 @@
     </div>
     <!--内容-->
     <div id="content">
-     {{menuId}}
+      <search></search>
     </div>
   </div>
 </template>
 
 <script>
+  import search from './panel/search'
+
   export default {
     name: 'PanelContainer',
     data(){
@@ -43,12 +45,15 @@
       handleClose(){
         this.$emit('handleClose')
       }
-    }
+    },
+    components: {
+      search: search
+    },
   }
 </script>
 <style scoped>
   .panel{
-    position: absolute;width: 300px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
+    position: absolute;width: 250px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
   }
   .panelShow{
     display: block;
@@ -65,4 +70,7 @@
   height: 40px;
   background-color: #00bcd4;
 }
+  #content{
+    padding: 10px;
+  }
 </style>
