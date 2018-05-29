@@ -8,7 +8,7 @@
       <!--主视图区域-->
       <map-container></map-container>
       <!--功能面板-->
-      <panel-container :menuId="menuId" :visible="panelVisible"></panel-container>
+      <panel-container :menuId="menuId" :visible="panelVisible" @handleClose="setPanelHidden"></panel-container>
     </el-container>
   </div>
 </template>
@@ -25,7 +25,7 @@
       return {
         sidebarVisible: true,
         menuId: '',
-        panelVisible: true
+        panelVisible: false
       }
     },
     components: {
@@ -45,6 +45,9 @@
       handleMenuClick(menu) {
         this.menuId = menu
         this.panelVisible = true
+      },
+      setPanelHidden(){
+        this.panelVisible = false
       }
     }
   }

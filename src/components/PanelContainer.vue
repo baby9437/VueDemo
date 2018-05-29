@@ -14,31 +14,34 @@
 </template>
 
 <script>
-
   export default {
     name: 'PanelContainer',
     data(){
       return {
         title: 'custom title',
-        panelVisible:true
+        panelVisible:false
       }
     },
     props:['menuId','visible'],
     watch:{
-      menuId(val){
-        if(!val){
-          this.panelVisible=false
-        }else {
-          this.panelVisible = true
-        }
-      }
-    },
-    computed(){
+      menuId(val,oldVal){
+        this.panelVisible = !!val&&!!this.visible
+      },
+      visible(val,oldVal){
+        this.panelVisible = !!val&&!!this.menuId
+      },
 
     },
+   /* computed:{
+      getPanelState: function (){
+        this.panelVisible = !!(this.menuId&&this.visible)
+        console.log('panelVisible',this.panelVisible)
+        return this.panelVisible
+      }
+    },*/
     methods: {
       handleClose(){
-        this.panelVisible=false
+        this.$emit('handleClose')
       }
     }
   }
