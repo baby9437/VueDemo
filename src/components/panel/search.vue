@@ -1,5 +1,8 @@
 <template>
   <div >
+    <!--<div style="position: absolute;left:0px;top: 0px;" @click="handleEdit">
+        <img style="width: 40px;" src="../../../static/img/png64/edit.png" alt="">
+    </div>-->
     <el-collapse accordion>
       <el-collapse-item title=" 模型属性查询与编辑">
         <div class="content">
@@ -78,6 +81,9 @@
       }
     },
     methods: {
+      handleEdit(){
+        console.log('------')
+      },
       handleSelect(key, keyPath) {
         console.log(key, keyPath)
       }

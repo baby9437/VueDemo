@@ -8,14 +8,15 @@
     </div>
     <!--内容-->
     <div id="content">
-      <search></search>
+      <!--<search></search>-->
+      <marks></marks>
     </div>
   </div>
 </template>
 
 <script>
   import search from './panel/search'
-
+  import marks from './panel/marks'
   export default {
     name: 'PanelContainer',
     data(){
@@ -47,7 +48,8 @@
       }
     },
     components: {
-      search: search
+      search: search,
+      marks: marks
     },
   }
 </script>
