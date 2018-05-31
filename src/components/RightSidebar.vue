@@ -5,9 +5,12 @@
              text-color="#fff" active-text-color="#ffd04b">
       <el-submenu v-for="submenu in menu" :index="submenu.id.toString()" :key="submenu.id" style="padding: 0">
         <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
-        <el-menu-item v-for="child in submenu.children" style="margin:0;padding: 0;" :index="child.id.toString()" :key="child.panelId">
-          <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt="">
-        <!--  <div>{{child.name}}</div>-->
+        <el-menu-item style="margin:0;padding: 0;height: 60px;line-height: 10px"
+          v-for="child in submenu.children" :index="child.id.toString()" :key="child.panelId">
+         <div style="padding-top: 2px">
+           <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt=""><br/>
+           <div style="text-align: center;color: gray;margin-top: 2px;font-size: 10px">{{child.name}}</div>
+         </div>
         </el-menu-item>
       </el-submenu>
     </el-menu>
