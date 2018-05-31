@@ -20,12 +20,12 @@
 </template>
 
 <script>
-  import search from './panel/search'
+ /* import search from './panel/search'
   import marks from './panel/marks'
   import navigate from './panel/navigate'
   import terrain from './panel/terrain'
   import scale from './panel/scale'
-  import exportModel from './panel/exportModel'
+  import exportModel from './panel/exportModel'*/
 
   export default {
     name: 'PanelContainer',
@@ -66,12 +66,12 @@
       }
     },
     components: {
-      search: search,
+     /* search: search,
       marks: marks,
       navigate: navigate,
       terrain:terrain,
       scale:scale,
-      exportModel:exportModel
+      exportModel:exportModel*/
     },
   }
 </script>

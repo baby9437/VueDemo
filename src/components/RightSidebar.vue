@@ -124,7 +124,8 @@
                   hasPanel: true,
                   panelId: 'scale'
                 },
-                {id: 370, name: '模型导出', icon: '370export.png', hasChildren: false, hasPanel: true,panelId:'exportModel'}
+                {id: 370, name: '模型导出', icon: '370export.png', hasChildren: false, hasPanel: true,panelId:'exportModel'},
+                {id: 380, name: '系统对接', icon: 'disconnect.png', hasChildren: false, hasPanel: true,panelId:'connect'}
               ]
           },
           {//第四组一级菜单

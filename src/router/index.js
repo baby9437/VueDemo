@@ -7,6 +7,7 @@ import navigate from '@/components/panel/navigate'
 import scale from '@/components/panel/scale'
 import terrain from '@/components/panel/terrain'
 import exportModel from '@/components/panel/exportModel'
+import connect from '@/components/panel/connect'
 
 Vue.use(Router)
 
@@ -34,6 +35,9 @@ export default new Router({
       },{
         path: "exportModel",
         component: exportModel
+      },{
+        path: "connect",
+        component: connect
       }
 
       ]
