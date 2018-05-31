@@ -1,16 +1,19 @@
 <template>
     <div>
+      <div class="title">比例尺</div>
       <div>比例尺选择</div>
-      <el-select v-model="value" placeholder="请选择比例尺">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
+      <div style="padding: 10px 0 10px 10px">
+        <el-select v-model="value" placeholder="请选择比例尺">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
 
-      <el-button type="primary">确定</el-button>
+      <el-button type="primary" style="float: right;margin-bottom: 10px">确定</el-button>
     </div>
 </template>
 
