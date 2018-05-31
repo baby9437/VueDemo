@@ -99,7 +99,7 @@
                   icon: '340movie.png',
                   hasChildren: false,
                   hasPanel: false,
-                  panelId: 'panel-navigate'
+                  panelId: 'navigate'
                 },
                 {
                   id: 350, name: '地形控制', icon: '350terrain.png', hasChildren: true, hasPanel: true,panelId: 'terrain',
@@ -270,8 +270,8 @@
   }
 
   .el-submenu__title {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+   /* padding-left: 0 !important;
+    padding-right: 0 !important;*/
   }
 
   .subMenuImg {
@@ -285,7 +285,4 @@
     margin-left: 10px;
   }
 
-  i {
-    padding-left: 40px !important;
-  }
 </style>

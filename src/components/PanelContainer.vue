@@ -1,7 +1,7 @@
 <template>
   <div class="panel" :class="[{panelShow:panelVisible},{panelHidden:!panelVisible}]">
     <div id="header">
-      <div style="text-align: center;display: block;font-size: 25px;color: white;">{{title}}</div>
+      <!--<div style="text-align: center;display: block;font-size: 25px;color: white;">{{title}}</div>-->
       <div style="position: absolute;right: 0px;top: 0px;" @click="handleClose">
         <img style="width: 40px;" src="../../static/img/png64/101Close64.png" alt="">
       </div>
@@ -96,5 +96,16 @@
 }
   #content{
     padding: 10px;
+  }
+
+  >>> .title{
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    left: 40px;
+    top: 2px;
+    width: calc(100% - 80px);
   }
 </style>

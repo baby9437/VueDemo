@@ -3,6 +3,8 @@
     <!--<div style="position: absolute;left:0px;top: 0px;" @click="handleEdit">
         <img style="width: 40px;" src="../../../static/img/png64/edit.png" alt="">
     </div>-->
+
+    <div class="title">搜索查询</div>
     <el-collapse accordion>
       <el-collapse-item title=" 模型属性查询与编辑">
         <div class="content">

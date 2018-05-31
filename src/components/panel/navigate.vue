@@ -3,6 +3,8 @@
     <div style="position: absolute;left:0px;top: 0px;" @click="dialogFormVisible = true">
       <img style="width: 40px;" src="../../../static/img/png64/add.png" alt="">
     </div>
+    <div class="title">飞行导航</div>
+
     <div>
       <el-table :data="navigateTable" >
         <el-table-column prop="name" label="名称" width="80" ></el-table-column>
@@ -111,5 +113,14 @@
   }
 </script>
 <style scoped>
-
+/*.title{
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  left: 40px;
+  top: 2px;
+  width: calc(100% - 80px);
+}*/
 </style>
