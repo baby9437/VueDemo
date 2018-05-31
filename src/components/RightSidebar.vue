@@ -5,7 +5,7 @@
              text-color="#fff" active-text-color="#ffd04b">
       <el-submenu v-for="submenu in menu" :index="submenu.id.toString()" :key="submenu.id" style="padding: 0">
         <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
-        <el-menu-item v-for="child in submenu.children" style="margin:0;padding: 0;" :index="child.id.toString()" :key="child.id">
+        <el-menu-item v-for="child in submenu.children" style="margin:0;padding: 0;" :index="child.id.toString()" :key="child.panelId">
           <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt="">
         <!--  <div>{{child.name}}</div>-->
         </el-menu-item>
@@ -34,7 +34,7 @@
                 icon: '110usercenter.png',
                 hasChildren: false,
                 hasPanel: true,
-                panelId: 'panel-usercenter'
+                panelId: 'usercenter'
               }, //个人头像、密码修改、主题颜色
               {id: 120, name: '退出', icon: '120exit.png', hasChildren: false, hasPanel: false}
             ]
@@ -75,28 +75,7 @@
             children:
               [//子节点数组
                 {
-                  id: 310, name: '搜索查询', icon: '310search.png', hasChildren: true, hasPanel: false,
-                  children:
-                    [
-                      {id: 311, name: '属性查询', icon: '311info.png', hasChildren: false, hasPanel: false},
-                      {
-                        id: 312,
-                        name: '对象搜索',
-                        icon: '312objectsearch.png',
-                        hasChildren: false,
-                        hasPanel: true,
-                        panelId: 'panel-objsearch'
-                      },
-                      {id: 313, name: '坐标显示', icon: '313zuobiaoshow.png', hasChildren: false, hasPanel: false},
-                      {
-                        id: 314,
-                        name: '坐标查询',
-                        icon: '314zuobiao.png',
-                        hasChildren: false,
-                        hasPanel: true,
-                        panelId: 'panel-zbsearch'
-                      }
-                    ]
+                  id: 310, name: '搜索查询', icon: '310search.png', hasChildren: true, hasPanel: true,panelId:'search'
                 },
                 {
                   id: 320, name: '空间量测', icon: '320measure.png', hasChildren: true, hasPanel: false,
@@ -110,17 +89,17 @@
                       {id: 326, name: '地表面积', icon: '326dibiaoArea.png', hasChildren: false, hasPanel: false}
                     ]
                 },
-                {id: 330, name: '场景标签', icon: '330mark.png', hasChildren: false, hasPanel: true, panelId: 'panel-mark'},
+                {id: 330, name: '场景标签', icon: '330mark.png', hasChildren: false, hasPanel: true, panelId: 'marks'},
                 {
                   id: 340,
                   name: '动画导航',
                   icon: '340movie.png',
                   hasChildren: false,
                   hasPanel: false,
-                  panelId: 'panel-movie'
+                  panelId: 'panel-navigate'
                 },
                 {
-                  id: 350, name: '地形控制', icon: '350terrain.png', hasChildren: true, hasPanel: false,
+                  id: 350, name: '地形控制', icon: '350terrain.png', hasChildren: true, hasPanel: true,panelId: 'terrain',
                   children:
                     [
                       {id: 351, name: '高程开关', icon: '351kggaocheng.png', hasChildren: false, hasPanel: false},
@@ -130,7 +109,7 @@
                         icon: '352terraintrans.png',
                         hasChildren: false,
                         hasPanel: true,
-                        panelId: 'panel-terraintrans'
+                        panelId: 'panel-terrain'
                       }
                     ]
                 },
@@ -140,9 +119,9 @@
                   icon: '360bilichi.png',
                   hasChildren: false,
                   hasPanel: true,
-                  panelId: 'panel-bilichi'
+                  panelId: 'scale'
                 },
-                {id: 370, name: '模型导出', icon: '370export.png', hasChildren: false, hasPanel: false}
+                {id: 370, name: '模型导出', icon: '370export.png', hasChildren: false, hasPanel: true,panelId:'exportModel'}
               ]
           },
           {//第四组一级菜单
@@ -151,7 +130,7 @@
             icon: '400project.png',//菜单所对应的图标
             hasChildren: false,//是否有子节点，即是否有下级菜单
             hasPanel: true,//点击是否滑出右侧面板，如果有弹出面板，还需指定面板id，即panelId的值
-            panelId: 'panel-project'
+            panelId: 'project'
           },
           {//第五组一级菜单
             id: 500,///方案调整
@@ -237,7 +216,21 @@
         console.log(key, keyPath);
       },
       handleSelect(key, keyPath) {
-        this.currentSelect = key;
+       for(let item in this.menu){
+         if(this.menu[item].id==key){
+           this.currentSelect = this.menu[item].panelId
+           break
+         }
+         else {
+           for(let item2 in this.menu[item].children){
+            if(this.menu[item].children[item2].id == key){
+              this.currentSelect = this.menu[item].children[item2].panelId
+              break
+            }
+           }
+         }
+       }
+        console.log(this.currentSelect)
         this.$emit('menuClick', this.currentSelect)
       },
       getImageUrl(name) {

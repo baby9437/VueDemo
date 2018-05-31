@@ -9,7 +9,12 @@
     <!--内容-->
     <div id="content">
       <!--<search></search>-->
-      <marks></marks>
+      <!--<marks></marks>-->
+      <!--<navigate></navigate>-->
+      <!--<terrain></terrain>-->
+      <!--<scale></scale>-->
+      <!--<export-model></export-model>-->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -17,6 +22,11 @@
 <script>
   import search from './panel/search'
   import marks from './panel/marks'
+  import navigate from './panel/navigate'
+  import terrain from './panel/terrain'
+  import scale from './panel/scale'
+  import exportModel from './panel/exportModel'
+
   export default {
     name: 'PanelContainer',
     data(){
@@ -25,15 +35,20 @@
         panelVisible:false
       }
     },
-    props:['menuId','visible'],
+    props:['panel','visible'],
     watch:{
-      menuId(val,oldVal){
+      panel(val,oldVal){
         this.panelVisible = !!val&&!!this.visible
+        if(this.panelVisible){
+          this.linkTo();
+        }
       },
       visible(val,oldVal){
-        this.panelVisible = !!val&&!!this.menuId
-      },
-
+        this.panelVisible = !!val&&!!this.panel
+        if(this.panelVisible){
+          this.linkTo();
+        }
+      }
     },
    /* computed:{
       getPanelState: function (){
@@ -45,11 +60,18 @@
     methods: {
       handleClose(){
         this.$emit('handleClose')
+      },
+      linkTo(){
+        this.$router.push({path:'/'+this.panel})
       }
     },
     components: {
       search: search,
-      marks: marks
+      marks: marks,
+      navigate: navigate,
+      terrain:terrain,
+      scale:scale,
+      exportModel:exportModel
     },
   }
 </script>
