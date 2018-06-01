@@ -92,14 +92,12 @@
       </el-collapse-item>
       <el-collapse-item title="沿路立面分析">
         <el-form ref="form" :model="form" label-width="100px">
-
           <el-form-item label="分析深度:">
             <el-input v-model="form.depth" style="width: 100px"></el-input>米
           </el-form-item>
           <el-form-item label="生成背景色:">
             <el-color-picker v-model="form.color"></el-color-picker>
           </el-form-item>
-
           <el-form-item label="">
             <el-checkbox-group v-model="form.showList">
               <el-checkbox label="立面图中显示对象名称" name="type"></el-checkbox>
@@ -112,6 +110,30 @@
         <el-button>开始分析</el-button>
       </el-collapse-item>
       <el-collapse-item title="天际线拟合分析">
+        <el-form ref="form" :model="form" label-width="100px">
+          <el-form-item label="图片背景色:">
+            <el-color-picker v-model="form.color"></el-color-picker>
+          </el-form-item>
+          <el-form-item label="">
+            <el-checkbox-group v-model="form.showList">
+              <el-checkbox label="图片中显示对象名称" name="type"></el-checkbox>
+              <el-checkbox label="图片中显示对象高度" name="type"></el-checkbox>
+              <el-checkbox label="三维场景中显示对象名称" name="type"></el-checkbox>
+              <el-checkbox label="三维场景中显示对象高度" name="type"></el-checkbox>
+            </el-checkbox-group>
+          </el-form-item>
+        </el-form>
+
+        <div class="content">
+          <div class="item">
+            <img src="../../../static/img/png64/325shuipingArea.png" alt=""><br/>
+            <span>选择范围</span>
+          </div>
+          <div class="item">
+            <img  src="../../../static/img/png64/611curve.png" alt=""><br/>
+            <span>天际线拟合</span>
+          </div>
+        </div>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -168,8 +190,11 @@
   .el-checkbox+.el-checkbox{
     margin-left: 0;
   }
-  .el-form-item{margin-bottom: 10px}
-  .el-form-item__content{
+  .el-form-item{
+    margin-bottom: 10px
+  }
+  >>> .el-form-item__content{
     line-height: 25px;
+    margin-left:20px!important;
   }
 </style>
