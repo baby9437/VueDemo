@@ -74,14 +74,42 @@
             :value="item">
           </el-option>
         </el-select>个</div>
-        <el-row style="margin: 10px 0 10px 0">
+
+        <div style="margin:10px 0 10px 0">
           <el-button>沿路画线</el-button>
           <el-button>选择目标点</el-button>
+        </div>
+        <div style="margin-bottom: 10px">
           <el-button>开始分析</el-button>
-        </el-row>
+        </div>
+        <div>分析结果：</div>
+        <el-table ref="analysisResult" :data="resultTable" highlight-current-row @current-change=""
+                  style="width: 100%">
+          <el-table-column type="index" width="50"></el-table-column>
+          <el-table-column property="name" label="对象名称" width="120"></el-table-column>
+        </el-table>
 
       </el-collapse-item>
       <el-collapse-item title="沿路立面分析">
+        <el-form ref="form" :model="form" label-width="100px">
+
+          <el-form-item label="分析深度:">
+            <el-input v-model="form.depth" style="width: 100px"></el-input>米
+          </el-form-item>
+          <el-form-item label="生成背景色:">
+            <el-color-picker v-model="form.color"></el-color-picker>
+          </el-form-item>
+
+          <el-form-item label="">
+            <el-checkbox-group v-model="form.showList">
+              <el-checkbox label="立面图中显示对象名称" name="type"></el-checkbox>
+              <el-checkbox label="立面图中显示对象高度" name="type"></el-checkbox>
+              <el-checkbox label="三维场景中显示对象名称" name="type"></el-checkbox>
+              <el-checkbox label="三维场景中显示对象高度" name="type"></el-checkbox>
+            </el-checkbox-group>
+          </el-form-item>
+        </el-form>
+        <el-button>开始分析</el-button>
       </el-collapse-item>
       <el-collapse-item title="天际线拟合分析">
       </el-collapse-item>
@@ -100,8 +128,12 @@
         height:'',
         date:'',
         options: [5,10,20,30],
-        count:''
+        count:'',
 
+        form:{
+          color:'',
+          showList:[]
+        }
       }
     },
     methods: {
@@ -132,5 +164,12 @@
   .button {
     float: right;
     padding-bottom: 10px
+  }
+  .el-checkbox+.el-checkbox{
+    margin-left: 0;
+  }
+  .el-form-item{margin-bottom: 10px}
+  .el-form-item__content{
+    line-height: 25px;
   }
 </style>
