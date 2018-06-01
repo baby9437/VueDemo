@@ -8,6 +8,7 @@ import scale from '@/components/panel/scale'
 import terrain from '@/components/panel/terrain'
 import exportModel from '@/components/panel/exportModel'
 import connect from '@/components/panel/connect'
+import schema from '@/components/panel/schema'
 
 Vue.use(Router)
 
@@ -38,6 +39,9 @@ export default new Router({
       },{
         path: "connect",
         component: connect
+      },{
+        path: "schema",
+        component: schema
       }
 
       ]

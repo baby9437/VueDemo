@@ -142,7 +142,7 @@
             icon: '500tiaozheng.png',//菜单所对应的图标
             hasChildren: false,//是否有子节点，即是否有下级菜单
             hasPanel: true,//点击是否滑出右侧面板，如果有弹出面板，还需指定面板id，即panelId的值
-            panelId: 'panel-tiaozheng'
+            panelId: 'schema'
           },
           {//第六组一级菜单
             id: 600,///辅助分析
@@ -214,10 +214,44 @@
       handleOpen(key, keyPath) {
         console.log('open');
         console.log(key, keyPath);
+
+        for(let item in this.menu){
+          if(this.menu[item].id==key){
+            this.currentSelect = this.menu[item].panelId
+            break
+          }
+          else {
+            for(let item2 in this.menu[item].children){
+              if(this.menu[item].children[item2].id == key){
+                this.currentSelect = this.menu[item].children[item2].panelId
+                break
+              }
+            }
+          }
+        }
+        console.log(this.currentSelect)
+        this.$emit('menuClick', this.currentSelect)
       },
       handleClose(key, keyPath) {
         console.log('close');
         console.log(key, keyPath);
+
+        for(let item in this.menu){
+          if(this.menu[item].id==key){
+            this.currentSelect = this.menu[item].panelId
+            break
+          }
+          else {
+            for(let item2 in this.menu[item].children){
+              if(this.menu[item].children[item2].id == key){
+                this.currentSelect = this.menu[item].children[item2].panelId
+                break
+              }
+            }
+          }
+        }
+        console.log(this.currentSelect)
+        this.$emit('menuClick', this.currentSelect)
       },
       handleSelect(key, keyPath) {
        for(let item in this.menu){
@@ -255,10 +289,6 @@
     overflow: scroll
   }
 
-  .el-menu {
-    /*padding-left: 10px;*/
-  }
-
   .el-menu-item {
     background-color: white !important;
     border-left: rgb(0, 188, 212) solid thin;
@@ -267,12 +297,6 @@
 
   .el-submenu .el-menu-item {
     min-width: 0;
-    /*margin-left: -40px;*/
-  }
-
-  .el-submenu__title {
-   /* padding-left: 0 !important;
-    padding-right: 0 !important;*/
   }
 
   .subMenuImg {
@@ -285,6 +309,7 @@
     background-color: white;
     margin-left: 10px;
   }
+
   >>> .el-submenu__icon-arrow{
     display: none;
   }

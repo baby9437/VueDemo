@@ -62,6 +62,7 @@
         this.$emit('handleClose')
       },
       linkTo(){
+        console.log('router',this.panel)
         this.$router.push({path:'/'+this.panel})
       }
     },
