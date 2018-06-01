@@ -285,5 +285,7 @@
     background-color: white;
     margin-left: 10px;
   }
-
+  >>> .el-submenu__icon-arrow{
+    display: none;
+  }
 </style>
