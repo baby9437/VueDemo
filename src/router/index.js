@@ -9,6 +9,7 @@ import terrain from '@/components/panel/terrain'
 import exportModel from '@/components/panel/exportModel'
 import connect from '@/components/panel/connect'
 import schema from '@/components/panel/schema'
+import occlusion from '@/components/panel/occlusion'
 
 Vue.use(Router)
 
@@ -42,6 +43,9 @@ export default new Router({
       },{
         path: "schema",
         component: schema
+      },{
+        path: "occlusion",
+        component: occlusion
       }
 
       ]

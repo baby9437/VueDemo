@@ -80,6 +80,26 @@
       </el-collapse-item>
       <el-collapse-item title="材质编辑工具">
         <div class="content">
+          <div style="margin-bottom: 10px">
+            <div class="item">
+              <img src="../../../static/img/png64/select.png" alt=""><br/>
+              <span>选择纹理</span>
+            </div>
+            <div class="item">
+              <img style="width: 80px" src="../../../static/img/png64/theme-blue.png" alt=""><br/>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px">
+            <div class="item">
+              <img src="../../../static/img/png64/109add.png" alt=""><br/>
+              <span>添加纹理</span>
+            </div>
+            <div class="item">
+              <img style="width: 80px" src="../../../static/img/png64/theme-green.png" alt=""><br/>
+            </div>
+          </div>
+
           <div class="item">
             <img src="../../../static/img/png64/111replace.png" alt=""><br/>
             <span>纹理替换</span>
