@@ -11,6 +11,7 @@ import connect from '@/components/panel/connect'
 import schema from '@/components/panel/schema'
 import occlusion from '@/components/panel/occlusion'
 import control from '@/components/panel/control'
+import staticAnalysis from '@/components/panel/staticAnalysis'
 
 Vue.use(Router)
 
@@ -50,6 +51,9 @@ export default new Router({
       },{
         path: "control",
         component: control
+      },{
+        path: "staticAnalysis",
+        component: staticAnalysis
       }
 
       ]

@@ -162,7 +162,7 @@
                   panelId: 'occlusion'
                 },
                 {id: 620, name: '控制类', icon: '620gaodu.png', hasChildren: false, hasPanel: true, panelId: 'control'},
-                {id: 630, name: '统计类', icon: 'shuxingchaxun.png', hasChildren: false, hasPanel: true, panelId: 'static'},
+                {id: 630, name: '统计类', icon: 'shuxingchaxun.png', hasChildren: false, hasPanel: true, panelId: 'staticAnalysis'},
                 {
                   id: 640,
                   name: '综合类',
