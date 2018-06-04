@@ -8,24 +8,12 @@
     </div>
     <!--内容-->
     <div id="content">
-      <!--<search></search>-->
-      <!--<marks></marks>-->
-      <!--<navigate></navigate>-->
-      <!--<terrain></terrain>-->
-      <!--<scale></scale>-->
-      <!--<export-model></export-model>-->
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
- /* import search from './panel/search'
-  import marks from './panel/marks'
-  import navigate from './panel/navigate'
-  import terrain from './panel/terrain'
-  import scale from './panel/scale'
-  import exportModel from './panel/exportModel'*/
 
   export default {
     name: 'PanelContainer',
@@ -50,13 +38,6 @@
         }
       }
     },
-   /* computed:{
-      getPanelState: function (){
-        this.panelVisible = !!(this.menuId&&this.visible)
-        console.log('panelVisible',this.panelVisible)
-        return this.panelVisible
-      }
-    },*/
     methods: {
       handleClose(){
         this.$emit('handleClose')
@@ -67,19 +48,15 @@
       }
     },
     components: {
-     /* search: search,
-      marks: marks,
-      navigate: navigate,
-      terrain:terrain,
-      scale:scale,
-      exportModel:exportModel*/
+
     },
   }
 </script>
 <style scoped>
   .panel{
     position: absolute;width: 250px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
-    /*max-height: calc(100% - 60px);*/
+    max-height: calc(100% - 60px);
+    overflow-x: hidden;
   }
   .panelShow{
     display: block;
