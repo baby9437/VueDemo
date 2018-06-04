@@ -32,36 +32,40 @@
       </el-table>
     </div>
 
-    <el-dialog title="添加/编辑场景标签" :visible.sync="dialogFormVisible" width="60%">
-      <el-form :model="editingForm" label-width="100px">
-        <el-form-item label="名称：">
-          <el-input v-model="editingForm.name" auto-complete="off" style="display: inline-block;width: 100px"></el-input>
-          <el-button type="primary">更新位置信息</el-button>
-        </el-form-item>
-       <div>位置信息：</div>
-        <div style="width: 200px;display: inline-block">
-          <el-form-item label="X坐标：">
-            <el-input v-model="editingForm.x" auto-complete="off"></el-input>
+    <el-dialog title="添加/编辑场景标签" :visible.sync="dialogFormVisible" style="width: 1000px" center>
+      <div>
+        <el-form :model="editingForm" label-width="100px">
+          <el-form-item label="名称：">
+            <el-input v-model="editingForm.name" auto-complete="off" style="display: inline-block;width: 100px"></el-input>
+            <el-button style="margin-left: 50px">更新位置</el-button>
           </el-form-item>
-          <el-form-item label="Y坐标：">
-            <el-input v-model="editingForm.y" auto-complete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="Z坐标：">
-            <el-input v-model="editingForm.z" auto-complete="off"></el-input>
-          </el-form-item>
-        </div>
-        <div style="width: 200px;display: inline-block">
-          <el-form-item label="Heading：">
-            <el-input v-model="editingForm.h" auto-complete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="Pitch：">
-            <el-input v-model="editingForm.p" auto-complete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="Roll：">
-            <el-input v-model="editingForm.r" auto-complete="off"></el-input>
-          </el-form-item>
-        </div>
-      </el-form>
+          <h3>位置信息：</h3>
+          <div style="width: 200px;display: inline-block">
+            <el-form-item label="X坐标：">
+              <el-input v-model="editingForm.x" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Y坐标：">
+              <el-input v-model="editingForm.y" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Z坐标：">
+              <el-input v-model="editingForm.z" auto-complete="off"></el-input>
+            </el-form-item>
+          </div>
+          <div style="width: 200px;display: inline-block">
+            <el-form-item label="Heading：">
+              <el-input v-model="editingForm.h" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Pitch：">
+              <el-input v-model="editingForm.p" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Roll：">
+              <el-input v-model="editingForm.r" auto-complete="off"></el-input>
+            </el-form-item>
+          </div>
+        </el-form>
+
+      </div>
+
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>

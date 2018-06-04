@@ -79,6 +79,7 @@
 <style scoped>
   .panel{
     position: absolute;width: 250px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
+    /*max-height: calc(100% - 60px);*/
   }
   .panelShow{
     display: block;

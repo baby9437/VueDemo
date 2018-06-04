@@ -35,14 +35,15 @@
             <span>旋转</span>
           </div>
 
-          <el-form ref="form" :model="form" label-width="100px">
+          <div style="padding: 10px 0 10px 0">
+            <el-form ref="form" :model="form" label-width="100px">
             <el-form-item label="X坐标值：">
               <el-input v-model="form.x"></el-input>米
             </el-form-item>
             <el-form-item label="Y坐标值：">
               <el-input v-model="form.y"></el-input>米
             </el-form-item>
-            <el-form-item label="Z坐标值：">
+            <el-form-item label="Z坐标值：" style="padding-bottom: 10px">
               <el-input v-model="form.z"></el-input>米
             </el-form-item>
 
@@ -52,7 +53,7 @@
             <el-form-item label="垂直缩放：">
               <el-input v-model="form.y"></el-input>倍
             </el-form-item>
-            <el-form-item label="整体缩放：">
+            <el-form-item label="整体缩放：" style="padding-bottom: 10px">
               <el-input v-model="form.z"></el-input>倍
             </el-form-item>
 
@@ -66,6 +67,7 @@
               <el-input v-model="form.z"></el-input>度
             </el-form-item>
           </el-form>
+          </div>
 
           <div class="item">
             <img  src="../../../static/img/png64/102save.png" alt=""><br/>

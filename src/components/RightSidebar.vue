@@ -1,20 +1,21 @@
 <template>
   <div id="sideBar">
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
-             @close="handleClose" background-color="#00bcd4" @select="handleSelect"
-             text-color="#fff" active-text-color="#ffd04b">
-      <el-submenu v-for="submenu in menu" :index="submenu.id.toString()" :key="submenu.id" style="padding: 0">
-        <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
-        <el-menu-item style="margin:0;padding: 0;height: 60px;line-height: 10px"
-          v-for="child in submenu.children" :index="child.id.toString()" :key="child.panelId">
-         <div style="padding-top: 2px">
-           <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt=""><br/>
-           <div style="text-align: center;color: gray;margin-top: 2px;font-size: 10px">{{child.name}}</div>
-         </div>
-        </el-menu-item>
-      </el-submenu>
-    </el-menu>
-
+    <div >
+      <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
+               @close="handleClose" background-color="#00bcd4" @select="handleSelect"
+               text-color="#fff" active-text-color="#ffd04b">
+        <el-submenu v-for="submenu in menu" :index="submenu.id.toString()" :key="submenu.id" style="padding: 0">
+          <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
+          <el-menu-item style="margin:0;padding: 0;height: 60px;line-height: 10px"
+                        v-for="child in submenu.children" :index="child.id.toString()" :key="child.panelId">
+            <div style="padding-top: 2px">
+              <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt=""><br/>
+              <div style="text-align: center;color: gray;margin-top: 2px;font-size: 10px">{{child.name}}</div>
+            </div>
+          </el-menu-item>
+        </el-submenu>
+      </el-menu>
+    </div>
   </div>
 </template>
 
@@ -282,12 +283,13 @@
   #sideBar {
     background-color: #00bcd4;
     z-index: 1000;
-    width: 77px;
-    height: calc(100% - 50px);
+    width: 70px;
+    height: calc(100% - 45px);
     position: absolute;
     right: -18px;
-    top: 50px;
-    overflow: scroll
+    top: 45px;
+    overflow: scroll;
+    overflow-x:hidden;
   }
 
   .el-menu-item {
@@ -302,7 +304,7 @@
 
   .subMenuImg {
     margin-left: -10px;
-    width: 38px;
+    width: 32px;
   }
 
   .subMenuItemImg {

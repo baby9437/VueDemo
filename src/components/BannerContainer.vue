@@ -13,7 +13,6 @@
 
   export default {
   name: 'BannerContainer',
-//    components: {Screenfull},
     data(){
       return {
           appTitle:'福州市三维规划辅助决策支持系统'
@@ -51,8 +50,8 @@
   }
   .top-nav{
     position: relative;
-    height: 50px;
-    line-height: 50px;
+    height: 45px;
+    line-height: 45px;
     border-bottom: 1px solid #ebeef5;
     font-size: 22px;
     background-color: #00bcd4;
