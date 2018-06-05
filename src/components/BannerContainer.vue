@@ -50,8 +50,8 @@
   }
   .top-nav{
     position: relative;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     border-bottom: 1px solid #ebeef5;
     font-size: 22px;
     background-color: #00bcd4;
@@ -64,7 +64,7 @@
     color:#fff;
   }
   .top-nav img{
-    margin-right: 10px;
+    margin-right: 7px;
     vertical-align:middle;
     height: 60px;width:144px;margin-top: 0px;padding-top:0px;
   }

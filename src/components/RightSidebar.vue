@@ -24,7 +24,8 @@
     name: 'RightSideBar',
     data() {
       return {
-        menu: [{//第一组一级菜单
+        menu: [
+        /*  {//第一组一级菜单
           id: 100,///用户管理
           name: '',//菜单图标下显示的文字，可以为空
           icon: '100user.png',//菜单所对应的图标
@@ -69,7 +70,7 @@
                 {id: 280, name: '前一视图', icon: '280left.png', hasChildren: false, hasPanel: false},
                 {id: 290, name: '后一视图', icon: '290right.png', hasChildren: false, hasPanel: false}
               ]
-          },
+          },*/
           {//第三组一级菜单
             id: 300,///常用工具
             name: '',//菜单图标下显示的文字，可以为空
@@ -169,7 +170,7 @@
                   icon: '630zonghe.png',
                   hasChildren: false,
                   hasPanel: true,
-                  panelId: 'panel-zonghe'
+                  panelId: 'compre'
                 }
               ]
           },
@@ -284,14 +285,18 @@
     background-color: #00bcd4;
     z-index: 1000;
     width: 70px;
-    height: calc(100% - 45px);
+    height: calc(100% - 40px);
     position: absolute;
     right: -18px;
-    top: 45px;
+    top: 40px;
     overflow: scroll;
     overflow-x:hidden;
+    text-align: center;
   }
-
+  >>> .el-submenu__title{
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
   .el-menu-item {
     background-color: white !important;
     border-left: rgb(0, 188, 212) solid thin;
@@ -300,17 +305,16 @@
 
   .el-submenu .el-menu-item {
     min-width: 0;
+    text-align: center;
   }
 
   .subMenuImg {
-    margin-left: -10px;
-    width: 32px;
+    width: 35px;
   }
 
   .subMenuItemImg {
-    width: 38px;
+    width: 30px;
     background-color: white;
-    margin-left: 10px;
   }
 
   >>> .el-submenu__icon-arrow{

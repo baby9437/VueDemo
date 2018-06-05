@@ -56,7 +56,19 @@
 
         </el-collapse-item>
         <el-collapse-item title="规划推演及指标计算">
+          <el-row style="margin-bottom: 2px">
+            <el-button>框选范围</el-button>
+            <el-button>选择红线</el-button>
+          </el-row>
 
+          <div>
+            <el-table ref="table_indicators" :data="table_indicators" highlight-current-row @current-change=""
+                      style="width: 100%">
+              <el-table-column type="index" label="编号" width="50"></el-table-column>
+              <el-table-column property="indicators" label="指标" width="80"></el-table-column>
+              <el-table-column property="value" label="数值" width="120"></el-table-column>
+            </el-table>
+          </div>
 
         </el-collapse-item>
       </el-collapse>
@@ -76,8 +88,9 @@
                 { label: '用途',value:'use' }
               ],
               form_classify:{field:'',areaUpper:'',areaLower:""},
-              table_classify:[],
-              table_demolition:[]
+              table_classify:[],//分类
+              table_demolition:[],//拆迁
+              table_indicators:[]
 
             }
         },
@@ -102,7 +115,10 @@
   .item img{
     width: 30px;
   }
-  .el-input{
+  .el-input {
+    width: 50%;
+  }
+  .el-select{
     width: 50%;
   }
 
