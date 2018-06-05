@@ -307,7 +307,6 @@
     min-width: 0;
     text-align: center;
   }
-
   .subMenuImg {
     width: 35px;
   }
