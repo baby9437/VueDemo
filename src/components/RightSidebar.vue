@@ -6,7 +6,7 @@
                text-color="#fff" active-text-color="#ffd04b">
         <el-submenu v-for="submenu in menu" :index="submenu.id.toString()" :key="submenu.id" style="padding: 0">
           <span slot="title"><img class="subMenuImg" :src="getImageUrl(submenu.icon)" alt=""></span>
-          <el-menu-item style="margin:0;padding: 0;height: 60px;line-height: 10px"
+          <el-menu-item style="margin:0;padding: 0;height: 55px;line-height: 10px"
                         v-for="child in submenu.children" :index="child.id.toString()" :key="child.panelId">
             <div style="padding-top: 2px">
               <img class="subMenuItemImg" :src="getImageUrl(child.icon)" alt=""><br/>

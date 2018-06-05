@@ -19,12 +19,28 @@
       </el-collapse-item>
 
       <el-collapse-item title="系统主题">
+        <div style="text-align: center">
+          <el-row>
+            <el-button style="background-color: red ;width: 50px;height: 50px"></el-button>
+            <el-button style="background-color: yellow;width: 50px;height: 50px"></el-button>
+          </el-row>
 
-
+        </div>
       </el-collapse-item>
       <el-collapse-item title="密码修改">
-
-
+        <div class="content">
+          原密码:
+          <el-input v-model="password" placeholder="请输入内容" style="width: 150px;"></el-input>
+        </div>
+        <div class="content">
+          新密码:
+          <el-input v-model="newPassword" placeholder="请输入内容" style="width: 150px;"></el-input>
+        </div>
+        <div class="content">
+          确认:
+          <el-input v-model="newPassword2" placeholder="请输入内容" style="width: 150px;margin-left: 13px"></el-input>
+        </div>
+    <div style="text-align: center"><el-button>修  改</el-button></div>
       </el-collapse-item>
     </el-collapse>
 
@@ -54,5 +70,8 @@
   }
 </script>
 <style scoped>
+.content{
+  padding: 5px 2px 5px 2px;
+}
 
 </style>
