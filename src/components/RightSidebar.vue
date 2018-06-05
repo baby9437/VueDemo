@@ -183,30 +183,30 @@
             children:
               [//子节点数组
                 {
-                  id: 710, name: '主题管理', icon: '710theme.png', hasChildren: true, hasPanel: false,
-                  children:
-                    [
-                      {id: 711, name: '绿色', icon: 'theme-green.png', hasChildren: false, hasPanel: false},
-                      {id: 712, name: '蓝色', icon: 'theme-blue.png', hasChildren: false, hasPanel: false},
-                      {id: 713, name: '红色', icon: 'theme-red.png', hasChildren: false, hasPanel: false},
-                      {id: 713, name: '灰色', icon: 'theme-grey.png', hasChildren: false, hasPanel: false}
-                    ]
+                  id: 710, name: '用户中心', icon: '710usercenter.png', hasChildren: false, hasPanel: true,panelId:'userCenter'
                 },
                 {
                   id: 720,
-                  name: '用户管理',
-                  icon: '720usermanage.png',
-                  hasChildren: false,
-                  hasPanel: true,
-                  panelId: 'panel-usermanage'
-                },
-                {
-                  id: 730,
                   name: '数据配置',
                   icon: '730datamanage.png',
                   hasChildren: false,
                   hasPanel: true,
-                  panelId: 'panel-datamanage'
+                  panelId: 'dataConfig'
+                },
+                {
+                  id: 730,
+                  name: '用户权限',
+                  icon: '740usermanager.png',
+                  hasChildren: false,
+                  hasPanel: true,
+                  panelId: 'userPermission'
+                },{
+                  id: 740,
+                  name: '退出',
+                  icon: '750exit.png',
+                  hasChildren: false,
+                  hasPanel: false,
+                  panelId: 'logout'
                 },
               ]
           }],
@@ -315,7 +315,6 @@
     width: 30px;
     background-color: white;
   }
-
   >>> .el-submenu__icon-arrow{
     display: none;
   }

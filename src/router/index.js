@@ -13,6 +13,7 @@ import occlusion from '@/components/panel/occlusion'
 import control from '@/components/panel/control'
 import staticAnalysis from '@/components/panel/staticAnalysis'
 import compre from '@/components/panel/compre'
+import userCenter from '@/components/panel/userCenter'
 
 Vue.use(Router)
 
@@ -58,6 +59,9 @@ export default new Router({
       },{
         path: "compre",
         component: compre
+      },{
+        path: "userCenter",
+        component: userCenter
       }
       ]
     }
