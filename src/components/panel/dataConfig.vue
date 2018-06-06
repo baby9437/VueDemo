@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div class="title">用户权限</div>
-  <div class="panelBody" style="width: 500px;">
+  <div class="title">数据配置管理</div>
+  <div class="panelBody" style="width: 1000px;">
     <el-tabs v-model="activeTab" type="card" @tab-click="">
       <el-tab-pane label="数据库配置" name="">
         <div style="text-align: center;">
@@ -63,14 +63,13 @@
             </div>
           </div>
         </div>
-
       </el-tab-pane>
       <el-tab-pane label="项目类型表" name="">
+        <div></div>
 
-        2
       </el-tab-pane>
       <el-tab-pane label="项目状态表" name="">
-        3
+
 
       </el-tab-pane>
       <el-tab-pane label="方案结构表" name="">

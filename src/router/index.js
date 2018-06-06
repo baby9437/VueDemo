@@ -16,6 +16,7 @@ import compre from '@/components/panel/compre'
 import userCenter from '@/components/panel/userCenter'
 import dataConfig from '@/components/panel/dataConfig'
 import userPermission from '@/components/panel/userPermission'
+import project from '@/components/panel/project'
 
 Vue.use(Router)
 
@@ -70,6 +71,9 @@ export default new Router({
       },{
         path: "userPermission",
         component: userPermission
+      },{
+        path: "project",
+        component: project
       }
       ]
     }
