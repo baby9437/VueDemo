@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="title">遮挡类分析</div>
-    <el-collapse accordion>
+    <div class="panelBody">
+      <el-collapse accordion>
       <el-collapse-item title="通视分析">
         <el-row style="margin-bottom: 2px">
           <el-button>通视画线</el-button>
@@ -136,6 +137,7 @@
         </div>
       </el-collapse-item>
     </el-collapse>
+    </div>
   </div>
 </template>
 

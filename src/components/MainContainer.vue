@@ -9,6 +9,7 @@
       <map-container></map-container>
       <!--功能面板-->
       <panel-container :panel="panel" :visible="panelVisible" @handleClose="setPanelHidden"></panel-container>
+
     </el-container>
   </div>
 </template>

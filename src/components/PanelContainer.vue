@@ -28,13 +28,13 @@
       panel(val,oldVal){
         this.panelVisible = !!val&&!!this.visible
         if(this.panelVisible){
-          this.linkTo();
+          this.linkTo()
         }
       },
       visible(val,oldVal){
         this.panelVisible = !!val&&!!this.panel
         if(this.panelVisible){
-          this.linkTo();
+          this.linkTo()
         }
       }
     },
@@ -54,7 +54,9 @@
 </script>
 <style scoped>
   .panel{
-    position: absolute;width: 250px;background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
+    position: absolute;
+    /*width: 250px;*/
+    background-color: white;right: 60px;top: 51px;border: 1px solid lightgray;
     max-height: calc(100% - 60px);
     overflow-x: hidden;
   }
@@ -69,6 +71,7 @@
    /* transform: translateX(370px);
     transition: transform 1s linear 0s;*/
   }
+
 #header{
   height: 40px;
   background-color: #00bcd4;
@@ -86,5 +89,8 @@
     left: 40px;
     top: 2px;
     width: calc(100% - 80px);
+  }
+  >>> .panelBody{
+    width: 250px;
   }
 </style>

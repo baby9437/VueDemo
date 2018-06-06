@@ -15,6 +15,7 @@ import staticAnalysis from '@/components/panel/staticAnalysis'
 import compre from '@/components/panel/compre'
 import userCenter from '@/components/panel/userCenter'
 import dataConfig from '@/components/panel/dataConfig'
+import userPermission from '@/components/panel/userPermission'
 
 Vue.use(Router)
 
@@ -66,6 +67,9 @@ export default new Router({
       },{
         path: "dataConfig",
         component: dataConfig
+      },{
+        path: "userPermission",
+        component: userPermission
       }
       ]
     }

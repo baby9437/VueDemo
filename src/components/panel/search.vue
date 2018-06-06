@@ -5,7 +5,8 @@
     </div>-->
 
     <div class="title">搜索查询</div>
-    <el-collapse accordion>
+    <div class="panelBody">
+      <el-collapse accordion>
       <el-collapse-item title=" 模型属性查询与编辑">
         <div class="content">
           <div class="item">
@@ -68,6 +69,7 @@
         </div>
       </el-collapse-item>
     </el-collapse>
+    </div>
   </div>
 </template>
 

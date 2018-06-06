@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="title">用户中心</div>
-    <el-collapse accordion>
+    <div class="panelBody">
+       <el-collapse accordion>
       <el-collapse-item title="基本信息">
         <div>
-          <el-form ref="form" :model="form" label-width="80px">
+          <el-form ref="userInfo" :model="userInfo" label-width="80px">
             <el-form-item label="登 录 名">
               <el-input v-model="userInfo.name"></el-input>
             </el-form-item>
@@ -43,7 +44,7 @@
     <div style="text-align: center"><el-button>修  改</el-button></div>
       </el-collapse-item>
     </el-collapse>
-
+    </div>
   </div>
 </template>
 

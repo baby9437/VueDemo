@@ -2,7 +2,6 @@
   <banner-container>
     <template slot="main">
       <div style="display: inline-block;position: absolute;right: 0">
-        <!--<div style="width: 100px;display: inline-block"></div>-->
       <div class="top-btn" @click="onClick()">
           <img class="top-btn-img" src="/static/img/png64/dog_house-64.png" alt="">
         </div>
@@ -26,6 +25,7 @@
       </div>
       <div style="width: 50px;display: inline-block"></div>
 
+        <!--用户侧边栏按钮-->
       <div class="top-btn" @click="onClick()">
         <img class="top-btn-img" src="../../static/img/png64/100user1.png" alt="">
         <div style="display: inline-block;">Admin</div>

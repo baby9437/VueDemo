@@ -1,7 +1,8 @@
 <template>
     <div>
       <div class="title">统计类分析</div>
-      <el-collapse accordion>
+      <div class="panelBody">
+        <el-collapse accordion>
         <el-collapse-item title="建筑物分类分析">
           <div>
             <el-form ref="form_classify" :model="form_classify" label-width="100px" >
@@ -72,6 +73,7 @@
 
         </el-collapse-item>
       </el-collapse>
+      </div>
     </div>
 </template>
 

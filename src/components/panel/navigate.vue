@@ -5,7 +5,7 @@
     </div>
     <div class="title">飞行导航</div>
 
-    <div>
+    <div class="panelBody">
       <el-table :data="navigateTable" >
         <el-table-column prop="name" label="名称" width="80" ></el-table-column>
         <el-table-column  label="快捷" width="50">

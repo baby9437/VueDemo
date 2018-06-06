@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <el-tabs v-model="activeTab" type="card" @tab-click="handleClick">
+    <div class="panelBody">
+        <el-tabs v-model="activeTab" type="card" @tab-click="">
           <el-tab-pane label="数据库配置" name="">
 
             1

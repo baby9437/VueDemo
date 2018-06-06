@@ -9,7 +9,6 @@
 
 <script>
   import {mapGetters} from 'vuex'
-//  import Screenfull from './Screenfull'
 
   export default {
   name: 'BannerContainer',
