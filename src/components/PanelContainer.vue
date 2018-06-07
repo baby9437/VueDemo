@@ -93,4 +93,7 @@
   >>> .panelBody{
     width: 250px;
   }
+  >>> .el-form-item {
+    margin-bottom: 5px;
+  }
 </style>
